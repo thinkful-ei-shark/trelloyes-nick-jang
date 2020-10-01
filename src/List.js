@@ -6,18 +6,20 @@ class List extends React.Component {
   render() {
     const cards = this.props.cards;
     const cardComponents = cards.map(card => {
-      return <Card key={card.id} title={card.title} content={card.content} />;
+      return <Card key={card.id} title={card.title} content={card.content} 
+        deleteCard={() => this.props.deleteCard(card.id)} />;
     });
 
     return (
-      <section class="List">
-        <header class="List-header">
+      <section className="List">
+        <header className="List-header">
           <h2>this.props.header</h2>
         </header>
-        <div class="List-cards">
+        <div className="List-cards">
           {cardComponents}
         </div>
-        <button type="button" class="List-add-button">
+        <button type="button" className="List-add-button" 
+          onClick={this.props.addRandomCard}>
             + Add Random Card
         </button>
       </section>

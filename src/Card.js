@@ -4,10 +4,10 @@ import './Card.css';
 class Card extends React.Component {
   render() {
     return (
-      <div class="Card">
-        <button type="button">delete</button>
-        <h3>this.props.title</h3>
-        <p>this.proper.content</p>
+      <div className="Card">
+        <button type="button" onClick={this.props.deleteCard}>delete</button>
+        <h3>{this.props.title}</h3>
+        <p>{this.props.content}</p>
       </div>
     )
   }
